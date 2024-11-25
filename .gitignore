@@ -2,6 +2,7 @@ venv/
 .idea/
 test_scripts/
 Python_OOP/
+Requests/
 Client_Responses_Info/
 Client_Responses_Info/main.py
 Client_Responses_Info/main
