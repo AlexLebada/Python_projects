@@ -33,8 +33,28 @@ $(document).ready(function(){
                     alert("Could not log in."); /** pop-up message */
                 }else{
                     console.log("Logged in as", response);
+                    /** When logged in, user is redirected to home page*/
+                    window.location.href="/";
                 }
             }
         })
     });
+
+    $(document).on("click", "#logout-link", function(e){
+        e.preventDefault();
+        console.log("logout click");
+        $.ajax({
+            url: '/logout',
+            type: 'GET',
+            success: function(response){
+                if(response == 'success'){
+                    window.location.href="/login";
+                    console.log("Logged out");
+                }else{
+                    alert("Something went wrong");
+                }
+            }
+        });
+    });
+
 });

@@ -1,0 +1,50 @@
+<div class="container">
+    <!-- Check if the user is logged in -->
+    $if session['user'] == None:
+        <h1>Hello CodeWizzard!</h1>
+    $else:
+        <div class="row">
+            <!-- Sidebar -->
+                <ul class="sidebar">
+                    <li class="active"><a href="#"><span class="mdi mdi-home"></span> Home Feed</a></li>
+                    <li><a href="#"><span class="mdi mdi-account-circle"></span> Profile</a></li>
+                    <li><a href="#"><span class="mdi mdi-email"></span> Messages</a></li>
+                    <li><a href="#"><span class="mdi mdi-google-circles-group"></span> Friends</a></li>
+                    <li><a href="#"><span class="mdi mdi-google-circles-communities"></span> Communities</a></li>
+                    <li><a href="#"><span class="mdi mdi-bell"></span> Notifications</a></li>
+                    <li class="separator"></li>
+                    <li><a href="#"><span class="mdi mdi-settings"></span> Settings</a></li>
+                    <li><a href="#"><span class="mdi mdi-help-circle"></span> Help</a></li>
+                </ul>
+
+            <!-- Main Content Area -->
+            <div class="col-md-6">
+                <!-- Post Box -->
+            <div class="post-box">
+                    <form id="post-activity">
+                        <textarea name="content" class="post-input" placeholder="What's new, $session['user']['name']?"></textarea>
+                        <button id="post-button" class="btn btn-info btn-raised waves-effect" type="submit">
+                            <span class="mdi mdi-send"></span> Post
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Post Card -->
+                        <div class="post-card">
+                            <div class="header">
+                                <div class="avatar"></div>
+                                <a href="/profile">Nick Gigel</a>
+                            </div>
+                            <div class="content">
+                                Test content
+                            </div>
+                            <div class="footer">
+                                <button class="btn"><span class="mdi mdi-thumb-up-outline">asd</span></button>
+                                <button class="btn"><span class="mdi mdi-comment-outline"></span></button>
+                                <button class="btn"><span class="mdi mdi-share"></span></button>
+                            </div>
+                        </div>
+            </div>
+        </div>
+
+</div>
