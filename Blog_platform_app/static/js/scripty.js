@@ -14,7 +14,7 @@ $(document).ready(function(){
             data: form,
             success: function(response){
                 console.log(response);
-                print(response)
+                window.location.href="/login";
             }
         });
     });
@@ -29,7 +29,7 @@ $(document).ready(function(){
             type: 'POST',
             data: form,
             success: function(response){
-                if(response=="error"){
+                if(response == "error"){
                     alert("Could not log in."); /** pop-up message */
                 }else{
                     console.log("Logged in as", response);
@@ -53,6 +53,45 @@ $(document).ready(function(){
                 }else{
                     alert("Something went wrong");
                 }
+            }
+        });
+    });
+
+    $(document).on("submit", "#post-activity", function(e){
+        e.preventDefault();
+        console.log("posted");
+        form = $(this).serialize() /** probably this is reserved word for taking #post-activity from above */
+        $.ajax({
+            url: '/post-activity',
+            type: 'POST',
+            data: form,
+            success: function(response){
+                console.log(response);
+                if(response){
+                    window.location.href = window.location.href}
+            }
+        });
+    });
+
+    $(document).on("submit", "#settings-form", function(e){
+        e.preventDefault();
+        console.log("posted");
+        form = $(this).serialize()
+        $.ajax({
+            url: '/update-settings',
+            type: 'POST',
+            data: form,
+            success: function(response){
+                if(response=="success"){
+                    /** $('input[name="name"]').val($('input[name="name"]').val());
+                    $('textarea[name="about"]').val($('textarea[name="about"]').val());
+                    $('input[name="hobbies"]').val($('input[name="hobbies"]').val());
+                    $('input[name="birthday"]').val($('input[name="birthday"]').val())
+                    window.location.href = window.location.href */
+                }else{
+                    /** alert(response) */
+                }
+
             }
         });
     });

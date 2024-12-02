@@ -1,26 +1,29 @@
+$def with (posts)
+
 <div class="container">
     <!-- Check if the user is logged in -->
     $if session['user'] == None:
         <h1>Hello CodeWizzard!</h1>
     $else:
-        <div class="row">
+    <div class="row">
             <!-- Sidebar -->
                 <ul class="sidebar">
-                    <li class="active"><a href="#"><span class="mdi mdi-home"></span> Home Feed</a></li>
-                    <li><a href="#"><span class="mdi mdi-account-circle"></span> Profile</a></li>
+                    <li class="active"><a href="#"><span class="mdi mdi-home"></span> Audio</a></li>
+                    <li><a href="/profile/$session['user']['username']"><span class="mdi mdi-account-circle"></span> Profile</a></li>
                     <li><a href="#"><span class="mdi mdi-email"></span> Messages</a></li>
                     <li><a href="#"><span class="mdi mdi-google-circles-group"></span> Friends</a></li>
                     <li><a href="#"><span class="mdi mdi-google-circles-communities"></span> Communities</a></li>
                     <li><a href="#"><span class="mdi mdi-bell"></span> Notifications</a></li>
                     <li class="separator"></li>
-                    <li><a href="#"><span class="mdi mdi-settings"></span> Settings</a></li>
+                    <li><a href="/settings"><span class="mdi mdi-settings"></span> Settings</a></li>
                     <li><a href="#"><span class="mdi mdi-help-circle"></span> Help</a></li>
                 </ul>
 
+
             <!-- Main Content Area -->
-            <div class="col-md-6">
+            <div class="col-md-6" style="margin-left: 550px;">
                 <!-- Post Box -->
-            <div class="post-box">
+                <div class="post-box">
                     <form id="post-activity">
                         <textarea name="content" class="post-input" placeholder="What's new, $session['user']['name']?"></textarea>
                         <button id="post-button" class="btn btn-info btn-raised waves-effect" type="submit">
@@ -29,22 +32,25 @@
                     </form>
                 </div>
 
-                <!-- Post Card -->
-                        <div class="post-card">
-                            <div class="header">
-                                <div class="avatar"></div>
-                                <a href="/profile">Nick Gigel</a>
-                            </div>
-                            <div class="content">
-                                Test content
-                            </div>
-                            <div class="footer">
-                                <button class="btn"><span class="mdi mdi-thumb-up-outline">asd</span></button>
-                                <button class="btn"><span class="mdi mdi-comment-outline"></span></button>
-                                <button class="btn"><span class="mdi mdi-share"></span></button>
-                            </div>
+
+                $for post in posts:
+                    <div class="post-card">
+                        <div class="header">
+                            <div class="avatar"></div>
+                            <a href="/profile/$post['username']">$post["username"]</a>
+                            <div><span class="timestamp"> $post['timestamp'] </span></div>
                         </div>
+                        <div class="content">
+                            $post["content"]
+                        </div>
+                        <div class="footer">
+                            <button class="btn"><span class="mdi mdi-thumb-up-outline"> Like</span></button>
+                            <button class="btn"><span class="mdi mdi-comment-outline"> Comment</span></button>
+                            <button class="btn"><span class="mdi mdi-share"> Share</span></button>
+                        </div>
+                    </div>
             </div>
-        </div>
+    </div>
+
 
 </div>

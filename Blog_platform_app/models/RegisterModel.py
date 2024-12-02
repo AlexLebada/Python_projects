@@ -15,8 +15,13 @@ class RegisterModel:
 
         id = self.Users.insert_one({"username": data.username,
                                 "name": data.name,
+                                "password": hashed,
                                 "email": data.email,
-                                "password": hashed
+                                "avatar": "",
+                                "background": "",
+                                "about": "",
+                                "birthday": "",
+                                "hobbies": ""
                                 })
         print("uid is", id)
         if 1==0:

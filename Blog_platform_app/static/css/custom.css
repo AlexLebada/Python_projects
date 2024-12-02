@@ -1,0 +1,181 @@
+/* General Container Styling */
+
+    * {
+         /*outline: 1px solid rgba(0, 0, 255, 0.5);*/
+    }
+.container {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.container_2{
+    width: 470px;
+    margin-left: 100;
+}
+
+
+/* Sidebar Styling */
+/* Sidebar Styling */
+.sidebar {
+    position: fixed; /* Fixes the sidebar to the left side */
+    top: 50px;
+    left: 0;
+    width: 150px; /* Adjust width as necessary */
+    height: 100%; /* Full height */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: #f8f9fa; /* Light gray background */
+    border-right: 1px solid #e0e0e0; /* Adds a subtle divider */
+}
+
+/* Ensure items align properly inside */
+.sidebar li {
+    padding: 15px 20px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+/* Active state */
+.sidebar li.active {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.sidebar li a {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Main Content Area */
+.col-md-6 {
+    flex: 1;
+}
+
+.post-box {
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.post-input {
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+#post-button {
+    margin-top: 10px;
+    float: right;
+    background-color: #007bff;
+    color: white;
+}
+
+/* Post Card Styling */
+.post-card {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 20px;
+    background-color: #fff;
+}
+
+.post-card .header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.post-card .header .avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #ccc;
+    margin-right: 10px;
+}
+
+.post-card .footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.post-card .footer button {
+    background: none;
+    border: none;
+    color: #007bff;
+    cursor: pointer;
+}
+
+.col-md-12 {
+        width: 100%;
+}
+
+.profile-header_2{
+}
+
+.background-image{
+    width: 100%;
+    height: 30%;
+    background-repeat: no-repeat !important;
+    background-color: #c0c4bc !important;
+    background-position: center !important;
+    background-size: auto;
+}
+
+.two-column-layout {
+    display: flex;
+    gap: 20px; /* Space between columns */
+    margin-top: 20px;
+}
+
+.two-column-layout .column {
+    flex: 1; /* Make both columns equal width */
+}
+
+/* Adjust for smaller screens */
+@media (max-width: 768px) {
+    .two-column-layout {
+        flex-direction: column;
+    }
+}
+
+.avatar {
+    text-align: center; /* Centers the avatar and text */
+    margin: 20px 0; /* Adds spacing around the avatar section */
+}
+
+.profile-avatar {
+    width: 100px; /* Set the size of the avatar */
+    height: 100px; /* Set the size of the avatar to maintain a perfect circle */
+    border-radius: 50%; /* Makes the image circular */
+    border: 4px solid white; /* Optional: adds a white border */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow for depth */
+    object-fit: cover; /* Ensures the image fits within the circle */
+}
+
+.profile-name {
+    color: white; /* Sets the text color to white */
+    font-size: 24px; /* Optional: Adjust the font size */
+    font-weight: bold; /* Optional: Makes the name bold */
+    margin-top: 10px; /* Optional: Adds spacing above */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6); /* Optional: Adds a subtle shadow for contrast */
+}
+
+.profile-headline {
+    color: white; /* Sets the text color to white */
+    font-size: 16px; /* Optional: Adjust the font size */
+    font-style: italic; /* Optional: Adds an italic style */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6); /* Optional: Adds a subtle shadow for contrast */
+}
+
+.timestamp{
+    padding-left: 10;
+    font-style: italic;
+}
+
