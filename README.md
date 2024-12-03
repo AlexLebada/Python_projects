@@ -15,7 +15,7 @@ make it on a more friendly GUI.
 
 Uses 2 scripts: main.py to get bing.com results as a HTML content; images.py get results from search engine, as images which are stored in a folder
 
-* ### Blog_1_app/
+* ### Blog_platform_app/
 
  Notes:
  <br/>
@@ -33,7 +33,7 @@ Also HTML/CSS pages is not entirely covered in tutorial lessons and I had to mak
   Track user activity and settings: '/post-activity' - user is posting to his profile, '/settings', '/update-settings', '/profile/(.*)/' - get user info and ordered post by date\, '/upload-image/(.*)' - upload profile images
 <br/> 
 
-  2.Storing & verify data in MongoDB using PyMongo:
+  2.Storing & verify data in local installed MongoDB using PyMongo:
   
   Users & Posts collection which are defined in RegisterModel, LoginModel, Posts\
 <br/>
@@ -47,5 +47,8 @@ Also HTML/CSS pages is not entirely covered in tutorial lessons and I had to mak
 
 ![Screenshot 2024-12-02 203952](https://github.com/user-attachments/assets/687c5f2f-0229-4035-a7c6-fb8088541eec)
 
+<br/>
 
+* ### Blog_2/
 
+Applications using Django framework
