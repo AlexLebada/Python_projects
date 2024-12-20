@@ -35,9 +35,6 @@ Also HTML/CSS pages is not entirely covered in tutorial lessons and I had to mak
 
 <br/>
 
-* ### Blog_2/
-
-Applications using Django framework
 
 
 * ### basic_calculator/
